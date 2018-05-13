@@ -1,0 +1,368 @@
+:root{
+	--primary: #ddd;
+	--dark:#333;
+	--light:#fff;
+	--shadow: 0 px 5px rgba(104, 104, 104, 0.8);
+}
+
+html{
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+	color: var(--dark);
+	
+}
+.wrapper{
+		display: grid;
+		grid-gap: 20px;
+		
+	}
+/*NAV*/
+.main-nav ul{
+	display: grid;
+	grid-gap: 20px;
+	padding: 0;
+	list-style:none;
+	grid-template-columns: repeat(3, 1fr);
+	
+}
+.main-nav a{
+	background: var(--primary);
+	display: block;
+	text-decoration:none;
+	padding: 0.8rem;
+	text-align: center;
+	color: var(--dark);
+	text-transform:uppercase;
+	font-size:1.1rem;
+	box-shadow: var(--shadow);
+}
+.main-nav a:hover{
+	color: var(--dark);
+		background-color: var(--light);
+}
+body{
+	background: #ccc;
+	margin: 30px 50px;
+	line-height: 1.4;
+}
+
+header{
+	background-image:url("img/utegym1.jpeg") ;
+		background-size: cover;
+	background-position: center;
+	width:720px;
+    margin-left: auto;
+    margin-right: auto;
+	padding-top: 30px;
+	min-height: 250px;
+	border-bottom: #000000 3px solid;
+	
+}
+/*header*/
+#darkback{
+	background-color: #808080;
+}
+header li {
+	float:left;
+	display: inline;
+	padding: 0 20px 0 20px;
+}
+
+.header .branding{
+	display: grid;
+		color:var(--dark);
+	text-align: center;
+	float: left;
+}
+
+header nav{
+	float: right;
+	margin-top: 10px;
+}
+
+header .highlight, header .current a{
+	color: #ffffff;
+	font-weight: bold;
+}
+header p{
+	display: grid;
+background: #ccc;
+		color:var(--shadow);
+		font-weight: bold;
+	text-align: center;
+	width: 40%;
+}
+header a:hover{
+	color:#cccccc;
+	font-weight:bold;
+}
+
+
+
+
+/*portfolio*/
+.portfolio{
+	 margin-left: 4rem;
+	display:grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
+
+}
+.portfolio img{
+	  display: block;
+  max-width:320px;
+  max-height:180px;
+  width: auto;
+  height: auto;
+	box-shadow: var(--shadow);
+
+}
+
+
+/*boxes*/
+.boxes{
+display: grid;
+grid-gap: 20px;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.box{
+	background: var(--primary);
+	text-align:center;
+	padding: 1.5rem 2rem;
+	box-shadow: var(--shadow);
+}
+
+/*footer*/
+footer{
+	margin-top: 2rem;
+	background:var(--dark);
+	color:var(--light);
+	
+	text-align: center;
+	padding: 1rem;
+}
+
+#searchBar{
+	border: 1px solid #000000;
+	border-right: none;
+	font-size: 16px;
+	padding: 10px;
+	outline: none;
+	width:250px;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-top-left-radius:10px;
+	border-bottom-left-radius:10px;
+	
+	
+}
+
+#searchBtn{
+	border: 1px solid #000000;
+	font-size:16px;
+	padding: 10px;
+	background:#f1d829;
+	font-weight:bold;
+	cursor:pointer;
+	outline: none;
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-top-right-radius:10px;
+	border-bottom-right-radius:10px;
+}
+#searchBtn:hover{
+	background: #f6e049;
+}
+
+
+#hittagym h1{
+	text-align: center;
+}
+
+
+@media(max-width:700px){
+	.top-container{
+		grid-template-areas:
+		'showcase showcase'
+		'top-box-a top-box-b'
+	}
+	.showcase h1{
+		font-size: 2.5rem;
+	}
+	
+	.main-nav ul{
+	grid-template-columns: 1fr;}
+		
+	
+	.portfolio{
+	
+		grid-template-columns: 1fr;
+		align-items: center;
+
+}
+#map{
+	grid-template-columns: 1fr;
+		align-items: center;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*google map tings*/
+ /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+	   .container{
+		   flow:center;
+	width: 80%;
+	margin: auto;
+	overflow: hidden;
+}
+	   
+     /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+    
+    #map{
+      height:400px;
+      width:600px;
+	      margin-left: auto;
+    margin-right: auto;
+    }
+     
+           html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .controls {
+        margin-top: 10px;
+        border: 1px solid transparent;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        height: 32px;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 300px;
+      }
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
+
+      .pac-container {
+        font-family: Roboto;
+      }
+
+      #type-selector {
+        color: #fff;
+        background-color: #4d90fe;
+        padding: 5px 11px 0px 11px;
+      }
+
+      #type-selector label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+	  
+	  
+	  
+	  
+	  
+	  
+	  /*    gäda */
+	        #description {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+      }
+
+      #infowindow-content .title {
+        font-weight: bold;
+      }
+
+      #infowindow-content {
+        display: none;
+      }
+
+      #map #infowindow-content {
+        display: inline;
+      }
+
+      .pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        font-family: Roboto;
+      }
+
+      #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+      }
+
+      .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+      }
+
+      .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+      }
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
+
+      #title {
+        color: #fff;
+        background-color: #4d90fe;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+      }
+      #target {
+        width: 345px;
+      }

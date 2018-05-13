@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<script defer src="/static/fontawesome/fontawesome-all.js"></script
+  <title></title>
+
+</head>
+<body>
+   <div class ="wrapper">
+   <nav class="main-nav">
+<ul>
+<li><a href="#">Utegym</a></li>
+<li><a href="#">Om oss</a></li>
+<li><a href="#">Services</a></li>
+
+</ul>
+
+</nav>
+
+   <header>
+
+
+      <div class="branding">
+
+        <h1><span class="highlight">UtomhusGym I Stockholm</span> </h1>
+
+      </div>
+
+
+</header>
+
+<section class="boxes">
+<div class="box">
+ <i class="fas fa-chart-pie fa-4x"></i>
+ <h3>Öppet för alla!</h3>
+<p>I Stockholm finns det nästan alltid ett utomhus gym nära dig. Det kostar inget och är öppet för alla, träna med din egen kroppsvikt eller använda de maskiner som erbjuds. </p>
+</div>
+</section>
+
+<section id="hittagym">
+
+<h1>Hitta ditt närmaste utomhusgym nedan</h1>
+
+
+
+  <div id="map"></div>
+
+
+</section>
+<section class="portfolio">
+
+<a href="http://www.stockholm.se/-/Serviceenhetsdetaljer/?enhet=e9e1fa0145cf4d6687092524e762b05e" target="_blank"><img src="img/akalla.jpg" ></a>
+<a href="http://www.stockholm.se/-/Serviceenhetsdetaljer/?enhet=09f8b14f745d4d80b8ffdf682fd4a52e" target="_blank"><img src="img/farsta.jpg" alt ="">
+<a href="http://www.stockholm.se/-/Serviceenhetsdetaljer/?enhet=7a0de7a214c74d1cb6b01885dec5725e" target="_blank"><img src="img/gärdet.jpg" alt ="">
+<a href="http://www.stockholm.se/-/Serviceenhetsdetaljer/?enhet=90f749ae96ab4d73a6f222c14846e095" target="_blank"><img src="img/hornsberg.jpg" alt ="">
+<a href="http://www.stockholm.se/-/Serviceenhetsdetaljer/?enhet=35eb558674df447bb2dfca055e3e9ec5" target="_blank"><img src="img/kungsholms.jpg" alt ="">
+<a href="http://www.stockholm.se/-/Serviceenhetsdetaljer/?enhet=be3c953dff1f4ebc9863898b9acce8ad" target="_blank"><img src="img/sätra.jpg" alt ="">
+
+
+</section>
+
+
+</div>
+<footer>
+<p>Utomhusgym Stockholm &copy; 2018</p>
+</footer>
+
+<script>
+      function initMap(){
+      // Map options
+      var options = {
+        zoom:10,
+        center:{lat:59.334591,lng:18.063240}
+      }
+
+      // New map
+      var map = new google.maps.Map(document.getElementById('map'), options);
+
+      // Listen for click on map
+      google.maps.event.addListener(map, 'click', function(event){
+        // Add marker
+        /*addMarker({coords:event.latLng});*/
+      });
+
+      /*
+      // Add marker
+      var marker = new google.maps.Marker({
+        position:{lat:42.4668,lng:-70.9495},
+        map:map,
+        icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+      });
+
+      var infoWindow = new google.maps.InfoWindow({
+        content:'<h1>Lynn MA</h1>'
+      });
+
+      marker.addListener('click', function(){
+        infoWindow.open(map, marker);
+      });
+      */
+
+      // Array of markers
+      var markers = [
+        {
+          coords:{lat:59.4119,lng:17.91463},
+          content:'<h2>Akalla Gårds utegym</h2>'
+        },
+        {
+          coords:{lat:59.29351,lng:18.12846},
+          content:'<h2>Akalla Gårds utegym</h2>'
+        },
+        {
+          coords:{lat:59.29522,lng:17.92369},
+		  content:'<h2>Bredängs utegym</h2>'
+        },
+		{
+          coords:{lat:59.27241,lng:18.14852},
+          content:'<h2>Brotorp utegym</h2>'
+        },
+		{
+          coords:{lat:59.30465,lng:18.07417},
+          content:'<h2>Eriksdal utegym</h2>'
+        },
+		{
+          coords:{lat:59.25099,lng:18.07669},
+          content:'<h2>Fagersjöskogens utegym</h2>'
+        },
+		{
+          coords:{lat:59.23974,lng:18.07988},
+          content:'<h2>Farsta utegym</h2>'
+        },
+		{
+          coords:{lat:59.23851,lng:18.07072},
+          content:'<h2>Farstanäsets utegym</h2>'
+        },
+		{
+          coords:{lat:59.23692,lng:18.08506},
+          content:'<h2>Farstastrandsbadets utegym</h2>'
+        },
+		{
+          coords:{lat:59.25328,lng:18.15992},
+          content:'<h2>Flatenbadet utegym</h2>'
+        },
+		{
+          coords:{lat:59.28219,lng:17.9634},
+          content:'<h2>Fruängens utegym</h2>'
+        },
+		{
+          coords:{lat:59.35791,lng:17.86537},
+          content:'<h2>Grimsta utegym</h2>'
+        },
+		{
+          coords:{lat:59.36137,lng:17.84643},
+          content:'<h2>Grimstafältet - Grimsta motionsspår</h2>'
+        },
+		{
+          coords:{lat:59.34267,lng:18.10805},
+          content:'<h2>Gärdet utegym</h2>'
+        },
+		{
+          coords:{lat:59.30151,lng:18.11184},
+          content:'<h2>Hammarby Sjöstads utegym</h2>'
+        },
+		{
+          coords:{lat:59.28981,lng:18.1589},
+          content:'<h2>Hellasgårdens utegym</h2>'
+        },
+		{
+          coords:{lat:59.35763,lng:18.09992},
+          content:'<h2>Hjorthagens utegym</h2>'
+        },
+		{
+          coords:{lat:59.34067,lng:18.00991},
+          content:'<h2>Hornsberg strand utegym</h2>'
+        },
+		{
+          coords:{lat:59.2467,lng:18.10913},
+          content:'<h2>Hökarängsbadets utegym</h2>'
+        },
+		{
+          coords:{lat:59.33545,lng:18.13593},
+          content:'<h2>Kaknäs utegym</h2>'
+        },
+		{
+          coords:{lat:59.34877,lng:17.85923},
+          content:'<h2><a href="#">Kanaanbadets utegym</a></h2>'
+        },
+		{
+          coords:{lat:59.33235,lng:18.03637},
+          content:'<h2>Kronobergsparkens utegym</h2>'
+        },
+		{
+          coords:{lat:59.33399,lng:18.04795},
+          content:'<h2>Kungsholms strandstigs utegym</h2>'
+        },
+		{
+          coords:{lat:59.28563,lng:18.12528},
+          content:'<h2>Kärrtorp utegym</h2>'
+        },
+		{
+          coords:{lat:59.37106,lng:18.05832},
+          content:'<h2>Lappkärrsbergets utegym, Docentbacken</h2>'
+        },
+		{
+          coords:{lat:59.31071,lng:18.02234},
+          content:'<h2>Liljeholmens utegym</h2>'
+        },
+		{
+          coords:{lat:59.34186,lng:17.95319},
+          content:'<h2>Lillsjöns utegym</h2>'
+        },
+		{
+          coords:{lat:59.29016,lng:17.9837},
+          content:'<h2>Mellanbergsparkens utegym</h2>'
+        },
+		{
+          coords:{lat:59.30017,lng:17.92603},
+          content:'<h2>Mälarhöjdsbadets utegym</h2>'
+        },
+		{
+          coords:{lat:59.28912,lng:18.10756},
+          content:'<h2>Nytorpsgärdes utegym</h2>'
+        },
+		{
+          coords:{lat:59.36941,lng:17.88014},
+          content:'<h2>Nälsta utegym</h2>'
+        },
+		{
+          coords:{lat:59.2715,lng:18.07291},
+          content:'<h2>Oppaundaparkens utegym</h2>'
+        },
+		{
+          coords:{lat:59.31881,lng:18.02775},
+          content:'<h2>Pålsundsparkens utegym</h2>'
+        }
+
+      ];
+
+      // Loop through markers
+      for(var i = 0;i < markers.length;i++){
+        // Add marker
+        addMarker(markers[i]);
+      }
+
+      // Add Marker Function
+      function addMarker(props){
+        var marker = new google.maps.Marker({
+          position:props.coords,
+          map:map,
+          //icon:props.iconImage
+        });
+
+        // Check for customicon
+        if(props.iconImage){
+          // Set icon image
+          marker.setIcon(props.iconImage);
+        }
+
+        // Check content
+        if(props.content){
+          var infoWindow = new google.maps.InfoWindow({
+            content:props.content
+          });
+
+          marker.addListener('click', function(){
+            infoWindow.open(map, marker);
+          });
+        }
+      }
+    }
+
+	function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -33.8688, lng: 151.2195},
+          zoom: 13,
+          mapTypeId: 'roadmap'
+        });
+
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
+
+        var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+
+          // Clear out the old markers.
+          markers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+               // Array of markers
+      var markers = [
+        {
+          coords:{lat:59.4119,lng:17.91463},
+          content:'<h2>Akalla Gårds utegym</h2>'
+        },
+        {
+          coords:{lat:59.29351,lng:18.12846},
+          content:'<h2>Akalla Gårds utegym</h2>'
+        },
+        {
+          coords:{lat:59.29522,lng:17.92369},
+		  content:'<h2>Bredängs utegym</h2>'
+        },
+		{
+          coords:{lat:59.27241,lng:18.14852},
+          content:'<h2>Brotorp utegym</h2>'
+        },
+		{
+          coords:{lat:59.30465,lng:18.07417},
+          content:'<h2>Eriksdal utegym</h2>'
+        },
+		{
+          coords:{lat:59.25099,lng:18.07669},
+          content:'<h2>Fagersjöskogens utegym</h2>'
+        },
+		{
+          coords:{lat:59.23974,lng:18.07988},
+          content:'<h2>Farsta utegym</h2>'
+        },
+		{
+          coords:{lat:59.23851,lng:18.07072},
+          content:'<h2>Farstanäsets utegym</h2>'
+        },
+		{
+          coords:{lat:59.23692,lng:18.08506},
+          content:'<h2>Farstastrandsbadets utegym</h2>'
+        },
+		{
+          coords:{lat:59.25328,lng:18.15992},
+          content:'<h2>Flatenbadet utegym</h2>'
+        },
+		{
+          coords:{lat:59.28219,lng:17.9634},
+          content:'<h2>Fruängens utegym</h2>'
+        },
+		{
+          coords:{lat:59.35791,lng:17.86537},
+          content:'<h2>Grimsta utegym</h2>'
+        },
+		{
+          coords:{lat:59.36137,lng:17.84643},
+          content:'<h2>Grimstafältet - Grimsta motionsspår</h2>'
+        },
+		{
+          coords:{lat:59.34267,lng:18.10805},
+          content:'<h2>Gärdet utegym</h2>'
+        },
+		{
+          coords:{lat:59.30151,lng:18.11184},
+          content:'<h2>Hammarby Sjöstads utegym</h2>'
+        },
+		{
+          coords:{lat:59.28981,lng:18.1589},
+          content:'<h2>Hellasgårdens utegym</h2>'
+        },
+		{
+          coords:{lat:59.35763,lng:18.09992},
+          content:'<h2>Hjorthagens utegym</h2>'
+        },
+		{
+          coords:{lat:59.34067,lng:18.00991},
+          content:'<h2>Hornsberg strand utegym</h2>'
+        },
+		{
+          coords:{lat:59.2467,lng:18.10913},
+          content:'<h2>Hökarängsbadets utegym</h2>'
+        },
+		{
+          coords:{lat:59.33545,lng:18.13593},
+          content:'<h2>Kaknäs utegym</h2>'
+        },
+		{
+          coords:{lat:59.34877,lng:17.85923},
+          content:'<h2>Kanaanbadets utegym</h2>'
+        },
+		{
+          coords:{lat:59.33235,lng:18.03637},
+          content:'<h2>Kronobergsparkens utegym</h2>'
+        },
+		{
+          coords:{lat:59.33399,lng:18.04795},
+          content:'<h2>Kungsholms strandstigs utegym</h2>'
+        },
+		{
+          coords:{lat:59.28563,lng:18.12528},
+          content:'<h2>Kärrtorp utegym</h2>'
+        },
+		{
+          coords:{lat:59.37106,lng:18.05832},
+          content:'<h2>Lappkärrsbergets utegym, Docentbacken</h2>'
+        },
+		{
+          coords:{lat:59.31071,lng:18.02234},
+          content:'<h2>Liljeholmens utegym</h2>'
+        },
+		{
+          coords:{lat:59.34186,lng:17.95319},
+          content:'<h2>Lillsjöns utegym</h2>'
+        },
+		{
+          coords:{lat:59.29016,lng:17.9837},
+          content:'<h2>Mellanbergsparkens utegym</h2>'
+        },
+		{
+          coords:{lat:59.30017,lng:17.92603},
+          content:'<h2>Mälarhöjdsbadets utegym</h2>'
+        },
+		{
+          coords:{lat:59.28912,lng:18.10756},
+          content:'<h2>Nytorpsgärdes utegym</h2>'
+        },
+		{
+          coords:{lat:59.36941,lng:17.88014},
+          content:'<h2>Nälsta utegym</h2>'
+        },
+		{
+          coords:{lat:59.2715,lng:18.07291},
+          content:'<h2>Oppaundaparkens utegym</h2>'
+        },
+		{
+          coords:{lat:59.31881,lng:18.02775},
+          content:'<h2>Pålsundsparkens utegym</h2>'
+        }
+
+      ];
+
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location
+            }));
+
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        });
+      }
+    </script>
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAye5DUciZ6mIVYNXd7tSPeEUQqDYZ5OIg&callback=initMap">
+    </script>
+
+
+  </body>
+</html>
